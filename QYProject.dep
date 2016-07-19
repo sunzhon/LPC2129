@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1243662393</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Library\Drivers\ADC\ADC.c</file>
+      <file>$PROJ_DIR$\MyFunction\Interrupt.c</file>
+      <file>$PROJ_DIR$\Library\Drivers\PWM\PWM.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\PIT\PIT.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\GPIO\GPIO.c</file>
+      <file>$PROJ_DIR$\Library\Drivers\CAN\CAN.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\ADC\ADC.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\UART\UART.h</file>
+      <file>$PROJ_DIR$\MyFunction\Interrupt.h</file>
+      <file>$PROJ_DIR$\MyFunction\ADCF.h</file>
+      <file>$PROJ_DIR$\MyFunction\main.c</file>
+      <file>$PROJ_DIR$\Library\CPU\ycheck.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\SPI\SPI.c</file>
+      <file>$PROJ_DIR$\MyFunction\Angle_PID.c</file>
+      <file>$PROJ_DIR$\MyFunction\headers.h</file>
+      <file>$PROJ_DIR$\MyFunction\ADCF.c</file>
+      <file>$PROJ_DIR$\Library\Drivers\UART\UART.c</file>
+      <file>$PROJ_DIR$\Library\CPU\Vector.c</file>
+      <file>$PROJ_DIR$\MyFunction\System_Init.c</file>
+      <file>$PROJ_DIR$\MyFunction\Angle_PID.h</file>
+      <file>$PROJ_DIR$\MyFunction\System_Init.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\SPI\SPI.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\GPIO.o</file>
+      <file>$PROJ_DIR$\Library\Drivers\PIT\PIT.c</file>
+      <file>$PROJ_DIR$\MyFunction\Macro.h</file>
+      <file>$PROJ_DIR$\Library\CPU\Vector.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\GPIO\GPIO.h</file>
+      <file>$PROJ_DIR$\Library\Drivers\PWM\PWM.c</file>
+      <file>$PROJ_DIR$\Library\Drivers\CAN\CAN.c</file>
+      <file>$PROJ_DIR$\Library\CPU\iolpc2129.h</file>
+      <file>$PROJ_DIR$\Library\CPU\intrinsics.h</file>
+      <file>$PROJ_DIR$\Library\CPU\iolpc2119.h</file>
+      <file>$PROJ_DIR$\Library\CPU\io_macros.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Interrupt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Interrupt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\SPI.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\SPI.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADCF.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\CAN.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\System_Init.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\PWM.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Angle_PID.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UART.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\QYProject.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\System_Init.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CAN.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\QYProject.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PIT.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Angle_PID.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Vector.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\PIT.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\PWM.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Vector.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\GPIO.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADCF.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UART.o</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\ADC\ADC.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 31 33 34 32 11 26 27 28 3 6 7 22 5 2 20 8 58 52 55 57 38 60 54 49 21 19 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MyFunction\Interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\GPIO\GPIO.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 31 33 34 32 11 26 27 28 3 6 7 22 5 2 20 8 58 52 55 57 38 60 54 49 21 19 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MyFunction\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\SPI\SPI.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MyFunction\Angle_PID.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MyFunction\ADCF.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\UART\UART.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\CPU\Vector.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 31 33 34 32 11 26 27 28 3 6 7 22 5 2 20 8 58 52 55 57 38 60 54 49 21 19 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MyFunction\System_Init.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\PIT\PIT.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\PWM\PWM.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Library\Drivers\CAN\CAN.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 31 33 34 32 11 26 27 28 3 6 7 22 5 2 20 8 58 52 55 57 38 60 54 49 21 19 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

@@ -1,0 +1,72 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[JLinkDriver]
+WatchCond=_ 0
+Watch0=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
+Watch1=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
+[DebugChecksum]
+Checksum=-327768931
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[struct_types]
+Fmt0=CAN_MSG-Data1	3	0
+Fmt1=CAN_MSG-Data2	3	0
+Fmt2=CAN_MSG-ID	3	0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\MyFunction\Interrupt.c}.44.3" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_DATA" "AD_Send" 0 0 0 0 4294967295
+Count=2
+[Aliases]
+A0=_ "C:\Users\zsp\Desktop\QY\Library\CPU\Vector.c" ""
+A1=_ "C:\Users\zsp\Desktop\QY\MyFunction\ADCF.c" "G:\QY\MyFunction\ADCF.c"
+A2=_ "G:\QY-HZ6.3 带信号采集\QY\MyFunction\ADCF.c" "J:\QY-HZ6.3 带信号采集\QY\MyFunction\ADCF.c"
+A3=_ "J:\QY-HZ6.3 带信号采集\QY\MyFunction\ADCF.c" ""
+A4=_ "J:\QY-HZ6.3 带信号采集\QY\MyFunction\main.c" ""
+Count=5
+SuppressDialog=1

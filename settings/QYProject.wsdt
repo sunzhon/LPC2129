@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>QYProject/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>171</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1395</ColumnWidth1><ColumnWidth2>372</ColumnWidth2><ColumnWidth3>93</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Debug-Log><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window></Windows></PreferedWindows><ColumnWidth0>25</ColumnWidth0><ColumnWidth1>1302</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-28746-14836</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>QYProject</ExpandedNode><ExpandedNode>QYProject/Library</ExpandedNode><ExpandedNode>QYProject/Library/Driver</ExpandedNode><ExpandedNode>QYProject/Library/Driver/CAN</ExpandedNode><ExpandedNode>QYProject/MyFunction</ExpandedNode><ExpandedNode>QYProject/MyFunction/Angle_PID</ExpandedNode><ExpandedNode>QYProject/MyFunction/Headers</ExpandedNode><ExpandedNode>QYProject/MyFunction/Source</ExpandedNode><ExpandedNode>QYProject/MyFunction/Source/Interrupt_Function</ExpandedNode><ExpandedNode>QYProject/MyFunction/System_Init</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-16312-5064</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-21186-14593</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>134</SelStart2><SelEnd2>134</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\Macro.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>30</YPos2><SelStart2>335</SelStart2><SelEnd2>335</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\Interrupt.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>304</SelStart2><SelEnd2>304</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\ADCF.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>1816</SelStart2><SelEnd2>1816</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Library\Drivers\GPIO\GPIO.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\System_Init.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>11</YPos2><SelStart2>5996</SelStart2><SelEnd2>5996</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Library\Drivers\CAN\CAN.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>324</YPos2><SelStart2>10516</SelStart2><SelEnd2>10523</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Library\Drivers\CAN\CAN.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>104</YPos2><SelStart2>3465</SelStart2><SelEnd2>3465</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Library\CPU\iolpc2119.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\Angle_PID.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>23</YPos2><SelStart2>965</SelStart2><SelEnd2>979</SelEnd2></Tab><ActiveTab>9</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\MyFunction\headers.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>359</SelStart2><SelEnd2>359</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-04FB0970><key>iaridepm.enu1</key></Toolbar-04FB0970></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>461</Bottom><Right>262</Right><x>-2</x><y>-2</y><xscreen>78</xscreen><yscreen>63</yscreen><sizeHorzCX>57101</sizeHorzCX><sizeHorzCY>91971</sizeHorzCY><sizeVertCX>193265</sizeVertCX><sizeVertCY>675912</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>179</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>181</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>264234</sizeHorzCY><sizeVertCX>80527</sizeVertCX><sizeVertCY>137226</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
