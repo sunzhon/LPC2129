@@ -26,8 +26,13 @@ void main(void)
 #endif
          for(;;)
          {
+           GPIO_SetPinStat(PORT0,13,1);
+           /*
+          GPIO_SetPinStat(PORT0,13,0);
+          delay(1000);
           GPIO_SetPinStat(PORT0,13,1);
-
+          delay(1000);
+             */
          }
 
     }

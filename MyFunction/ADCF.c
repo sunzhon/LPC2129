@@ -1,11 +1,12 @@
 #include"headers.h"
 
-void delay(void)
+void delay(int16u_t flag)
 {
- int16u_t flag=50;
- while(flag!=0)
+  int32u_t temp;
+  temp=100*flag;
+ while(temp!=0)
  {
- flag--;
+ temp--;
  }
 
 }

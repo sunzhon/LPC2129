@@ -28,7 +28,7 @@ void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 
 
 
- nP = nValue * Joint1_Angle_P;          //求比例
+ nP = Joint1_Angle_P*nValue;          //求比例
 
  Joint1_PI_Out=(int16u_t)(nP);
 

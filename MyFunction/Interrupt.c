@@ -19,7 +19,6 @@ void Timer1Interrupt(void)
 
 }
 
-//#ifdef LPC2129 Controler
 
 void EW_IntHandler_RX_CAN1( void )
 
@@ -28,7 +27,6 @@ void EW_IntHandler_RX_CAN1( void )
         int16u_t TT2;
 
   EW_ReceiveData_CAN(CAN1,&RxMsg1);
-  GPIO_SetPinStat(PORT0,13,0);
   Joint1_AD_Data=AD_Filter(AD1);
   Joint2_AD_Data=AD_Filter(AD2);
   Joint3_AD_Data=AD_Filter(AD3);
@@ -55,7 +53,8 @@ void EW_IntHandler_RX_CAN1( void )
          TT2=(RxMsg1.Data1&0x0000FF00)>>8;
          Joint3_Object_Angle=TT1+TT2;
          AD_Send(Joint1_AD_Data,Joint2_AD_Data,Joint3_AD_Data,Leg_QY);
-          break;
+          GPIO_SetPinStat(PORT0,13,0);
+         break;
       default :
         break;
     }
@@ -88,7 +87,8 @@ void EW_IntHandler_RX_CAN1( void )
       break;
     case Leg_QY:
       AD_Send(Joint1_AD_Data,Joint2_AD_Data,Joint3_AD_Data,Leg_QZ);
-        break;
+      GPIO_SetPinStat(PORT0,13,0);
+      break;
     default:
       break;
     }
@@ -118,6 +118,7 @@ void EW_IntHandler_RX_CAN1( void )
         break;
     case Leg_QZ:
            AD_Send(Joint1_AD_Data,Joint2_AD_Data,Joint3_AD_Data,Leg_HY);
+           GPIO_SetPinStat(PORT0,13,0);
            break;
     default:
       break;
@@ -148,6 +149,7 @@ void EW_IntHandler_RX_CAN1( void )
         break;
     case Leg_HY:
            AD_Send(Joint1_AD_Data,Joint2_AD_Data,Joint3_AD_Data,Leg_HZ);
+           GPIO_SetPinStat(PORT0,13,0);
            break;
     default:
     break;

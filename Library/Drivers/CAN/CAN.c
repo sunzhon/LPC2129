@@ -10,9 +10,9 @@
 CAN_Filter CAN1Filter[] = {
 /* Filter         Controller, Disable,  ID,        ID       */
 /*  Type           1  2        1  2     1          2        */
-{ EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x14, 0x15 */
-{ EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x17  },    /* Standard ID 0x16, 0x17 */
-{ EW_CAN_STD,     0, 0,       0, 0,     0x18,      0x19  },    /* Standard ID 0x18, 0x1E */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x10, 0x11 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x13  },    /* Standard ID 0x12, 0x17 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x14,      0x15  },    /* Standard ID 0x18, 0x1E */
 { EW_CAN_STD,     0, 0,       0, 0,     0x20,      0x21  },    /* Standard ID 0x20, 0x22 */
 { EW_CAN_STD,      0, 0,       0, 0,    0x22,      0x23 },    /* Standard ID 0x140, 0x142 */
 { EW_CAN_STD,      0, 0,       0, 0,    0x24,      0x25 },    /* Standard ID 0x203-0x206 */
@@ -26,9 +26,9 @@ CAN_Filter CAN1Filter[] = {
 CAN_Filter CAN2Filter[] = {
 /* Filter         Controller, Disable,  ID,        ID       */
 /*  Type           1  2        1  2     1          2        */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x10,      0x12  },    /* Standard ID 0x10, 0x12 */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x21,      0x22  },    /* Standard ID 0x10, 0x12 */
 { EW_CAN_FULL,     1, 1,       0, 0,    0x23,      0x24  },    /* Standard ID 0x23, 0x24 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x26,      0x27  },    /* Standard ID 0x26, 0x27 */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x25,      0x26  },    /* Standard ID 0x26, 0x27 */
 { EW_CAN_FULL,     1, 1,       0, 0,    0x29,      0x2A  },    /* Standard ID 0x29, 0x2A */
 { EW_CAN_STD,      1, 1,       0, 0,    0x150,     0x151 },    /* Standard ID 0x150, 0x151 */
 { EW_CAN_STD_GRP,  1, 1,       0, 0,    0x600,     0x620 },    /* Standard ID 0x600-0x620 */
@@ -46,13 +46,13 @@ CAN_MSG Can1Test[] = {
 /* CTRL                                                   | ID         | Data1      | Data2       */
 /* Priority,0-255, DLC bits, RTR,     Frame format        | ID         | Data1      | Data2       */
 {   1            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x10,        0x11111111L, 0x22222222L },  // 0
-{   2            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x12,        0x33333333L, 0x44444444L },  // 1
-{   3            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x23,        0x11111111L, 0x22222222L },  // 2
-{   4            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x24,        0x11111111L, 0x22222222L },  // 3
-{   5            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x26,        0x33333333L, 0x44444444L },  // 4
-{   6            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x27,        0x33333333L, 0x44444444L },  // 5
-{   7            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x29,        0x33333333L, 0x44444444L },  // 6
-{   0            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x2A,        0x33333333L, 0x44444444L },  // 7
+{   2            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x11,        0x33333333L, 0x44444444L },  // 1
+{   3            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x12,        0x11111111L, 0x22222222L },  // 2
+{   4            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x13,        0x11111111L, 0x22222222L },  // 3
+{   5            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x14,        0x33333333L, 0x44444444L },  // 4
+{   6            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x15,        0x33333333L, 0x44444444L },  // 5
+{   7            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x16,        0x33333333L, 0x44444444L },  // 6
+{   0            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x17,        0x33333333L, 0x44444444L },  // 7
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x151,       0x88888888L, 0x09999999L },  // 8
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x600,       0x33333333L, 0x44444444L },  // 9
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x620,       0x33333333L, 0x44444444L },  // 10
@@ -66,14 +66,14 @@ CAN_MSG Can1Test[] = {
 CAN_MSG Can2Test[] = {
 /* CTRL                                               | ID         | Data1      | Data2       */
 /* Priority,0-255, DLC bits, RTR, Frame format        | ID         | Data1      | Data2       */
-{   0            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x20,        0x55555555L, 0x66666666L },  // 0
+{   0            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x21,        0x55555555L, 0x66666666L },  // 0
 {   1            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x22,        0x77777777L, 0x88888888L },  // 1
-{   2            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x14,        0x77777777L, 0x88888888L },  // 2
-{   3            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x15,        0x77777777L, 0x88888888L },  // 3
-{   4            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x16,        0x77777777L, 0x88888888L },  // 4
-{   5            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x17,        0x77777777L, 0x88888888L },  // 5
-{   6            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x18,        0x77777777L, 0x88888888L },  // 6
-{   7            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x1E,        0x77777777L, 0x88888888L },  // 7
+{   2            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x23,        0x77777777L, 0x88888888L },  // 2
+{   3            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x24,        0x77777777L, 0x88888888L },  // 3
+{   4            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x25,        0x77777777L, 0x88888888L },  // 4
+{   5            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x26,        0x77777777L, 0x88888888L },  // 5
+{   6            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x27,        0x77777777L, 0x88888888L },  // 6
+{   7            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x28,        0x77777777L, 0x88888888L },  // 7
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x140,       0x77777777L, 0x88888888L },  // 8
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x142,       0x77777777L, 0x88888888L },  // 9
 {   8            + (8<<16) +  0  +EW_CAN_CTRL_STANDARD_ID, 0x204,       0x77777777L, 0x88888888L },  // 10

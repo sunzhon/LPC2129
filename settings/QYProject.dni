@@ -28,8 +28,9 @@ ActionState=1
 WatchCond=_ 0
 Watch0=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
 Watch1=_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0
+CStepIntDis=_ 0
 [DebugChecksum]
-Checksum=-327768931
+Checksum=-1759317691
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -59,8 +60,8 @@ Exclusions=
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\MyFunction\Interrupt.c}.44.3" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_DATA" "AD_Send" 0 0 0 0 4294967295
+Bp0=_ 1 "EMUL_DATA" "AD_Send" 0 0 0 0 4294967295
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\MyFunction\Interrupt.c}.30.3" 0 0 1 "" 0 "" 0
 Count=2
 [Aliases]
 A0=_ "C:\Users\zsp\Desktop\QY\Library\CPU\Vector.c" ""
