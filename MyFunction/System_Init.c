@@ -76,15 +76,19 @@ void CAN_Init()
   C2MOD |= 0x01;
 
   Open_CAN_Interrupt(CAN1,0,2);     //使能 CAN1接收中断 优先级为2
-  //Open_CAN_Interrupt(CAN2,0,2);     //使能 CAN1接收中断 优先级为2
+  Open_CAN_Interrupt(CAN2,0,3);     //使能 CAN1接收中断 优先级为2
+  /**************关于CAN总线的设置*************************/
+  /* step1:滤波器
+  /* step2:分频系数，2是1M,4是500k,....,both of them have to same
+  /* step3:can1 and can2 ,both of them open interrupt, the pir have to be different
 
 
-
+  */
   C1GSR = 0;                        //清全局状态寄存器
   C2GSR = 0;
 
-  CAN_Clk(CAN1,16,1);               //CAN位时间为100usec
-  CAN_Clk(CAN2,16,1);
+  CAN_Clk(CAN1,4,1);               //CAN位时间为100usec
+  CAN_Clk(CAN2,4,1);
 
    SFF_sa     = 0;                //标准帧起始地址寄存器
    SFF_GRP_sa = 0;                //标准帧组起始地址寄存器
@@ -100,7 +104,6 @@ void CAN_Init()
 
    C1MOD = ( C1MOD & ~0x01 );            //退出复位状态
    C2MOD = ( C2MOD & ~0x01 );
-
 
    Filter_Count=0;
    while ( CAN1Filter[Filter_Count].FilterType )         //加载CAN验收滤波器表格 最多有5种不同的标识符
