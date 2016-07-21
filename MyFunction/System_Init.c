@@ -78,12 +78,11 @@ void CAN_Init()
   Open_CAN_Interrupt(CAN1,0,2);     //使能 CAN1接收中断 优先级为2
   Open_CAN_Interrupt(CAN2,0,3);     //使能 CAN1接收中断 优先级为2
   /**************关于CAN总线的设置*************************/
-  /* step1:滤波器
-  /* step2:分频系数，2是1M,4是500k,....,both of them have to same
-  /* step3:can1 and can2 ,both of them open interrupt, the pir have to be different
+  //step1:滤波器
+  // step2:分频系数，2是1M,4是500k,....,both of them have to same
+  // step3:can1 and can2 ,both of them open interrupt, the pir have to be different
 
 
-  */
   C1GSR = 0;                        //清全局状态寄存器
   C2GSR = 0;
 

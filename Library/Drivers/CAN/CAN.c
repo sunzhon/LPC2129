@@ -6,16 +6,13 @@
       2个标准标识符组，2个扩展标识符1个扩展标识符组
       通过调用EW_AddFilter_CAN（）将其顺序的放到验收滤波器RAM中
 **----------------------------------------------------------------------------------------*/
-
+#ifdef Board_QY
 CAN_Filter CAN1Filter[] = {
 /* Filter         Controller, Disable,  ID,        ID       */
 /*  Type           1  2        1  2     1          2        */
 { EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x10, 0x11 */
 { EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x13  },    /* Standard ID 0x12, 0x17 */
 { EW_CAN_STD,     0, 0,       0, 0,     0x14,      0x15  },    /* Standard ID 0x18, 0x1E */
-{ EW_CAN_STD,     0, 0,       0, 0,     0x20,      0x21  },    /* Standard ID 0x20, 0x22 */
-{ EW_CAN_STD,      0, 0,       0, 0,    0x22,      0x23 },    /* Standard ID 0x140, 0x142 */
-{ EW_CAN_STD,      0, 0,       0, 0,    0x24,      0x25 },    /* Standard ID 0x203-0x206 */
 { EW_CAN_STD,      0, 0,       0, 0,    0x26,      0x27 },    /* Standard ID 0x500-0x580 */
 { EW_CAN_EXT,      0, 0,       0, 0,    0x123456,  0 },        /* Extended ID 0x123456 */
 { EW_CAN_EXT,      0, 0,       0, 0,    0x222333,  0 },        /* Extended ID 0x222333 */
@@ -23,13 +20,67 @@ CAN_Filter CAN1Filter[] = {
 { 0,               0, 0,       0, 0,    0,         0 },        /* End of table */
 };
 
+
+#endif
+
+#ifdef Board_QZ
+CAN_Filter CAN1Filter[] = {
+/* Filter         Controller, Disable,  ID,        ID       */
+/*  Type           1  2        1  2     1          2        */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x10, 0x11 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x13  },    /* Standard ID 0x12, 0x17 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x14,      0x15  },    /* Standard ID 0x18, 0x1E */
+{ EW_CAN_STD,      0, 0,       0, 0,    0x20,      0x27 },    /* Standard ID 0x500-0x580 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x123456,  0 },        /* Extended ID 0x123456 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x222333,  0 },        /* Extended ID 0x222333 */
+{ EW_CAN_EXT_GRP,  0, 0,       0, 0,    0x300000,  0x400000 }, /* Extended ID 0x300000-0x400000 */
+{ 0,               0, 0,       0, 0,    0,         0 },        /* End of table */
+};
+
+#endif
+
+#ifdef Board_HY
+CAN_Filter CAN1Filter[] = {
+/* Filter         Controller, Disable,  ID,        ID       */
+/*  Type           1  2        1  2     1          2        */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x10, 0x11 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x13  },    /* Standard ID 0x12, 0x17 */
+{ EW_CAN_STD,      0, 0,       0, 0,    0x21,      0x25 },    /* Standard ID 0x203-0x206 */
+{ EW_CAN_STD,      0, 0,       0, 0,    0x26,      0x27 },    /* Standard ID 0x500-0x580 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x123456,  0 },        /* Extended ID 0x123456 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x222333,  0 },        /* Extended ID 0x222333 */
+{ EW_CAN_EXT_GRP,  0, 0,       0, 0,    0x300000,  0x400000 }, /* Extended ID 0x300000-0x400000 */
+{ 0,               0, 0,       0, 0,    0,         0 },        /* End of table */
+};
+
+
+#endif
+
+#ifdef Board_HZ
+
+CAN_Filter CAN1Filter[] = {
+/* Filter         Controller, Disable,  ID,        ID       */
+/*  Type           1  2        1  2     1          2        */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x10,      0x11  },    /* Standard ID 0x10, 0x11 */
+{ EW_CAN_STD,     0, 0,       0, 0,     0x12,      0x13  },    /* Standard ID 0x12, 0x17 */
+{ EW_CAN_STD,      0, 0,       0, 0,    0x22,      0x25 },    /* Standard ID 0x203-0x206 */
+{ EW_CAN_STD,      0, 0,       0, 0,    0x26,      0x27 },    /* Standard ID 0x500-0x580 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x123456,  0 },        /* Extended ID 0x123456 */
+{ EW_CAN_EXT,      0, 0,       0, 0,    0x222333,  0 },        /* Extended ID 0x222333 */
+{ EW_CAN_EXT_GRP,  0, 0,       0, 0,    0x300000,  0x400000 }, /* Extended ID 0x300000-0x400000 */
+{ 0,               0, 0,       0, 0,    0,         0 },        /* End of table */
+};
+
+
+#endif
+
 CAN_Filter CAN2Filter[] = {
 /* Filter         Controller, Disable,  ID,        ID       */
 /*  Type           1  2        1  2     1          2        */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x21,      0x22  },    /* Standard ID 0x10, 0x12 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x23,      0x24  },    /* Standard ID 0x23, 0x24 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x25,      0x26  },    /* Standard ID 0x26, 0x27 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x29,      0x2A  },    /* Standard ID 0x29, 0x2A */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x30,      0x31  },    /* Standard ID 0x10, 0x12 */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x32,      0x33  },    /* Standard ID 0x23, 0x24 */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x34,      0x35  },    /* Standard ID 0x26, 0x27 */
+{ EW_CAN_FULL,     1, 1,       0, 0,    0x36,      0x37  },    /* Standard ID 0x29, 0x2A */
 { EW_CAN_STD,      1, 1,       0, 0,    0x150,     0x151 },    /* Standard ID 0x150, 0x151 */
 { EW_CAN_STD_GRP,  1, 1,       0, 0,    0x600,     0x620 },    /* Standard ID 0x600-0x620 */
 { EW_CAN_STD_GRP,  1, 1,       0, 0,    0x700,     0x780 },    /* Standard ID 0x700-0x780 */

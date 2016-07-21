@@ -60,27 +60,39 @@ typedef unsigned long dword;          /*定义双字型变量*/
 #define Joint3_PID_DOWN_Limit   -510           //后右3 PID输出限幅
 /**********************PID parameter *****************************/
 #ifdef Board_QY
-#define Joint1_Angle_P   12
-#define Joint2_Angle_P   12
-#define Joint3_Angle_P   12
+#define Joint1_Extend_P   4
+#define Joint1_Shorten_P  10
+#define Joint2_Extend_P   4
+#define Joint2_Shorten_P   10
+#define Joint3_Extend_P   4
+#define Joint3_Shorten_P   10
 #endif
 
 #ifdef Board_QZ
-#define Joint1_Angle_P   12
-#define Joint2_Angle_P   12
-#define Joint3_Angle_P   12
+#define Joint1_Extend_P   4
+#define Joint1_Shorten_P  10
+#define Joint2_Extend_P   4
+#define Joint2_Shorten_P   10
+#define Joint3_Extend_P   4
+#define Joint3_Shorten_P   10
 #endif
-#ifdef Board_HY
 
-#define Joint1_Angle_P   12
-#define Joint2_Angle_P   12
-#define Joint3_Angle_P   12
+#ifdef Board_HY
+#define Joint1_Extend_P   4
+#define Joint1_Shorten_P  10
+#define Joint2_Extend_P   4
+#define Joint2_Shorten_P   10
+#define Joint3_Extend_P   4
+#define Joint3_Shorten_P   10
 #endif
 
 #ifdef Board_HZ
-#define Joint1_Angle_P   12
-#define Joint2_Angle_P   12
-#define Joint3_Angle_P   12
+#define Joint1_Extend_P   4
+#define Joint1_Shorten_P  10
+#define Joint2_Extend_P   4
+#define Joint2_Shorten_P   10
+#define Joint3_Extend_P   4
+#define Joint3_Shorten_P   10
 #endif
 
 

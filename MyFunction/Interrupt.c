@@ -12,7 +12,6 @@ void Timer0Interrupt(void)
 
 }
 
-
 void Timer1Interrupt(void)
 {
  T1IR = 0xff; // 清中断标志
@@ -22,7 +21,7 @@ void Timer1Interrupt(void)
 
 void EW_IntHandler_RX_CAN1( void )
 
-{        CAN_MSG RxMsg1;
+{       CAN_MSG RxMsg1;
         int16u_t TT1;
         int16u_t TT2;
 

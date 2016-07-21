@@ -25,10 +25,10 @@ void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 
  if(nValue > 50)  nValue = 50;        //用于比例部分的角度偏差限幅 50
  if(nValue < -50) nValue = -50;
-
-
-
- nP = Joint1_Angle_P*nValue;          //求比例
+ if(nValue>0)
+      nP = Joint1_Extend_P*nValue;          //求比例
+ else
+      nP = Joint1_Shorten_P*nValue;          //求比例
 
  Joint1_PI_Out=(int16u_t)(nP);
 
@@ -76,8 +76,10 @@ void Joint2_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
  if(nValue < -50) nValue = -50;
 
 
-
- nP = nValue * (Joint2_Angle_P );          //求比例
+ if(nValue>0)
+      nP = Joint2_Extend_P*nValue;          //求比例
+ else
+      nP = Joint2_Shorten_P*nValue;          //求比例
  Joint2_PI_Out=(int16u_t)(nP);
 
 
@@ -122,9 +124,10 @@ void Joint3_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
  if(nValue > 50)  nValue = 50;        //用于比例部分的角度偏差限幅 50
  if(nValue < -50) nValue = -50;
 
-
-
- nP = nValue * (Joint3_Angle_P );          //求比例
+ if(nValue>0)
+      nP = Joint3_Extend_P*nValue;          //求比例
+ else
+      nP = Joint3_Shorten_P*nValue;          //求比例
 
  Joint3_PI_Out=(int16u_t)(nP);
 

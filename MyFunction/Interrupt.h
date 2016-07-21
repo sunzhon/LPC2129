@@ -2,13 +2,12 @@
 #define _Interrupt_H
 
 
-extern CAN_MSG TxMsg;
-extern CAN_MSG RxMsg0;
+
 extern int16u_t Status;
 extern int16u_t Joint1_AD_Data;
 extern int16u_t Joint2_AD_Data;
 extern int16u_t Joint3_AD_Data;
-extern int16u_t AD_flag;
+
 extern int16u_t Joint3_Object_Angle;
 extern int16u_t Joint2_Object_Angle;
 extern int16u_t Joint1_Object_Angle;
