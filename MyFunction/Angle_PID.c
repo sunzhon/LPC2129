@@ -2,9 +2,9 @@
 
 
 
-int16s_t Joint1_PI_Out;             //后右1 PID运算输出
-int16s_t Joint2_PI_Out;             //后右2 PID运算输出
-int16s_t Joint3_PI_Out;             //后右3 PID运算输出
+int16u_t Joint1_PI_Out;             //后右1 PID运算输出
+int16u_t Joint2_PI_Out;             //后右2 PID运算输出
+int16u_t Joint3_PI_Out;             //后右3 PID运算输出
 int8u_t Joint1_Temp;
 int8u_t Joint2_Temp;
 int8u_t Joint3_Temp;
@@ -16,7 +16,7 @@ int8u_t Joint3_Temp;
 ===============================================================================*/
 void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 {
- int32s_t nP;
+ int16s_t nP;
  int16s_t nValue;
 
  //printf("Joint1 Object_Data is :%d\t;AD_Data is :%d\n",Object_Data,AD_Data);
@@ -30,21 +30,19 @@ void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
  else
       nP = Joint1_Shorten_P*nValue;          //求比例
 
- Joint1_PI_Out=(int16u_t)(nP);
 
-
- if(Joint1_PI_Out>Joint1_PID_UP_Limit)
+ if(nP>Joint1_PID_UP_Limit)
  {
- Joint1_PI_Out=Joint1_PID_UP_Limit;
+ nP=Joint1_PID_UP_Limit;
  }
-  if(Joint1_PI_Out<Joint1_PID_DOWN_Limit)
+  if(nP<Joint1_PID_DOWN_Limit)
  {
- Joint1_PI_Out=Joint1_PID_DOWN_Limit;
+ nP=Joint1_PID_DOWN_Limit;
  }
 
  /**************************以下通过DA输出控制伺服阀****************************/
- Joint1_PI_Out=Joint1_PI_Out+Joint1_Zero;
- Joint1_PI_Out=Joint1_PI_Out<<2;
+ Joint1_PI_Out=(int16u_t)(nP+Joint1_Zero);   //从[-512,512]平移到[0,1024]
+ Joint1_PI_Out=Joint1_PI_Out<<2;   //低两位，高四位 无效
 
   GPIO_SetPinStat(PORT0,7,0);
   Joint1_Temp=Joint1_PI_Out>>8;      //取高八位数据
@@ -65,7 +63,7 @@ void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 void Joint2_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 {
 
-  int32s_t nP;
+  int16s_t nP;
   int16s_t nValue;
 
  //printf("Joint1 Object_Data is :%d\t;AD_Data is :%d\n",Object_Data,AD_Data);
@@ -80,21 +78,20 @@ void Joint2_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
       nP = Joint2_Extend_P*nValue;          //求比例
  else
       nP = Joint2_Shorten_P*nValue;          //求比例
- Joint2_PI_Out=(int16u_t)(nP);
 
 
- if(Joint2_PI_Out>Joint2_PID_UP_Limit)
+
+ if(nP>Joint2_PID_UP_Limit)
  {
- Joint2_PI_Out=Joint2_PID_UP_Limit;
+ nP=Joint2_PID_UP_Limit;
  }
-  if(Joint2_PI_Out<Joint2_PID_DOWN_Limit)
+  if(nP<Joint2_PID_DOWN_Limit)
  {
- Joint2_PI_Out=Joint2_PID_DOWN_Limit;
+ nP=Joint2_PID_DOWN_Limit;
  }
-
  /**************************以下通过DA输出控制伺服阀****************************/
- Joint2_PI_Out=Joint2_PI_Out+Joint2_Zero;
- Joint2_PI_Out=Joint2_PI_Out<<2;
+ Joint2_PI_Out=(int16u_t)(nP+Joint1_Zero);  //从[-512,512]平移到[0,1024]
+ Joint2_PI_Out=Joint2_PI_Out<<2;           //低两位，高四位 无效
 
   GPIO_SetPinStat(PORT0,10,0);
   Joint2_Temp=Joint2_PI_Out>>8;      //取高八位数据
@@ -102,7 +99,6 @@ void Joint2_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
   Joint2_Temp=Joint2_PI_Out&0xff;    //取低八位数据
   SPI_Send_Data(SPI0,&Joint2_Temp);
   GPIO_SetPinStat(PORT0,10,1);
-
 }
 
 /*=============================================================================
@@ -114,7 +110,7 @@ void Joint3_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
 {
 
 
-    int32s_t nP;
+    int16s_t nP;
     int16s_t nValue;
 
  //printf("Joint1 Object_Data is :%d\t;AD_Data is :%d\n",Object_Data,AD_Data);
@@ -129,20 +125,17 @@ void Joint3_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
  else
       nP = Joint3_Shorten_P*nValue;          //求比例
 
- Joint3_PI_Out=(int16u_t)(nP);
-
- if(Joint3_PI_Out>Joint3_PID_UP_Limit)
+ if(nP>Joint3_PID_UP_Limit)
  {
- Joint3_PI_Out=Joint3_PID_UP_Limit;
+ nP=Joint3_PID_UP_Limit;
  }
-  if(Joint3_PI_Out<Joint3_PID_DOWN_Limit)
+  if(nP<Joint3_PID_DOWN_Limit)
  {
- Joint3_PI_Out=Joint3_PID_DOWN_Limit;
+ nP=Joint3_PID_DOWN_Limit;
  }
-
  /**************************以下通过DA输出控制伺服阀****************************/
- Joint3_PI_Out=Joint3_PI_Out+Joint3_Zero;
- Joint3_PI_Out=Joint3_PI_Out<<2;
+ Joint3_PI_Out=(int16u_t)(nP+Joint1_Zero);
+ Joint3_PI_Out=Joint3_PI_Out<<2;             //低两位，高四位 无效
 
   GPIO_SetPinStat(PORT0,11,0);
   Joint3_Temp=Joint3_PI_Out>>8;      //取高八位数据
@@ -163,7 +156,6 @@ void DA_Control(int16s_t Manipulate_Data,int8u_t Joint){
 
   int8u_t  Manipulate_Temp;
 
-
  switch(Joint){
  case 1:
       if(Manipulate_Data>Joint1_PID_UP_Limit)
@@ -176,7 +168,7 @@ void DA_Control(int16s_t Manipulate_Data,int8u_t Joint){
  }
 
   Manipulate_Data=Manipulate_Data+Joint1_Zero;
-   Manipulate_Data=Manipulate_Data<<2;
+  Manipulate_Data=Manipulate_Data<<2;
 
   GPIO_SetPinStat(PORT0,7,0);
   Manipulate_Temp=Manipulate_Data>>8;      //取高八位数据

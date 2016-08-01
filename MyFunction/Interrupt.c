@@ -154,8 +154,8 @@ void EW_IntHandler_RX_CAN1( void )
     break;
     }
 #endif
-         Joint1_Angle_PID(Joint1_Object_Angle,Joint3_AD_Data);
-         Joint2_Angle_PID(Joint2_Object_Angle,Joint3_AD_Data);
+         Joint1_Angle_PID(Joint1_Object_Angle,Joint1_AD_Data);
+         Joint2_Angle_PID(Joint2_Object_Angle,Joint2_AD_Data);
          Joint3_Angle_PID(Joint3_Object_Angle,Joint3_AD_Data);
 
 }

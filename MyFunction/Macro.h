@@ -21,7 +21,7 @@ typedef unsigned long dword;          /*定义双字型变量*/
 
 
 /******************* definen Board **************************************/
-#define Board_QY
+#define Board_HZ
 
 
 /******************* definen Leg **************************************/
@@ -48,7 +48,7 @@ typedef unsigned long dword;          /*定义双字型变量*/
 #define Joint1_PID_DOWN_Limit   -510           //后右1 PID输出限幅
 /******************* 后右2伺服阀相关变量定义**************************************/
 
-#define Joint2_Zero        537           //后右2伺服阀零偏值
+#define Joint2_Zero        527           //后右2伺服阀零偏值
 
 #define Joint2_PID_UP_Limit   510           //后右3 PID输出限幅
 #define Joint2_PID_DOWN_Limit   -510           //后右3 PID输出限幅
