@@ -21,10 +21,17 @@ typedef unsigned long dword;          /*定义双字型变量*/
 
 
 /******************* definen Board **************************************/
-#define Board_HZ
+#define Board_QY
 
 
-/******************* definen Leg **************************************/
+/******************* definen force Leg **************************************/
+
+#define Force_Leg_QY 0x20
+#define Force_Leg_QZ 0x21
+#define Force_Leg_HY 0x22
+#define Force_Leg_HZ 0x23
+
+/******************* definen joint Leg **************************************/
 
 #define Leg_QY 0x20
 #define Leg_QZ 0x21
@@ -36,63 +43,68 @@ typedef unsigned long dword;          /*定义双字型变量*/
 #define joint2 0x11
 #define joint3 0x12
 
+/********************上位机控制指令定义*********************************/
+
+#define FORCE 0x50
+#define PIDPARA 0x51
+#define ADRANGE 0x52
 /******************* AD滤波**************************************/
 
 
-#define Filter_COUNT 10
+#define Filter_COUNT 40
 /******************* 后右1伺服阀相关变量定义**************************************/
 
 #define Joint1_Zero        520           //后右1伺服阀零偏值
 
-#define Joint1_PID_UP_Limit   510           //后右1 PID输出限幅
+#define Joint1_PID_UP_Limit   490           //后右1 PID输出限幅
 #define Joint1_PID_DOWN_Limit   -510           //后右1 PID输出限幅
 /******************* 后右2伺服阀相关变量定义**************************************/
 
-#define Joint2_Zero        527           //后右2伺服阀零偏值
+#define Joint2_Zero        520           //后右2伺服阀零偏值
 
-#define Joint2_PID_UP_Limit   510           //后右3 PID输出限幅
-#define Joint2_PID_DOWN_Limit   -510           //后右3 PID输出限幅
+#define Joint2_PID_UP_Limit   490           //后右3 PID输出限幅
+#define Joint2_PID_DOWN_Limit   -500           //后右3 PID输出限幅
 /******************* 后右3伺服阀相关变量定义**************************************/
 
 #define Joint3_Zero        512           //后右3伺服阀零偏值
 
-#define Joint3_PID_UP_Limit   400           //后右3 PID输出限幅
-#define Joint3_PID_DOWN_Limit   -510           //后右3 PID输出限幅
+#define Joint3_PID_UP_Limit   500           //后右3 PID输出限幅
+#define Joint3_PID_DOWN_Limit -510           //后右3 PID输出限幅
 /**********************PID parameter *****************************/
 #ifdef Board_QY
 #define Joint1_Extend_P   4
 #define Joint1_Shorten_P  10
 #define Joint2_Extend_P   4
-#define Joint2_Shorten_P   10
+#define Joint2_Shorten_P  10
 #define Joint3_Extend_P   4
-#define Joint3_Shorten_P   10
+#define Joint3_Shorten_P  10
 #endif
 
 #ifdef Board_QZ
 #define Joint1_Extend_P   4
 #define Joint1_Shorten_P  10
 #define Joint2_Extend_P   4
-#define Joint2_Shorten_P   10
+#define Joint2_Shorten_P  10
 #define Joint3_Extend_P   4
-#define Joint3_Shorten_P   10
+#define Joint3_Shorten_P  10
 #endif
 
 #ifdef Board_HY
 #define Joint1_Extend_P   4
 #define Joint1_Shorten_P  10
 #define Joint2_Extend_P   4
-#define Joint2_Shorten_P   10
+#define Joint2_Shorten_P  10
 #define Joint3_Extend_P   4
-#define Joint3_Shorten_P   10
+#define Joint3_Shorten_P  10
 #endif
 
 #ifdef Board_HZ
 #define Joint1_Extend_P   4
 #define Joint1_Shorten_P  10
 #define Joint2_Extend_P   4
-#define Joint2_Shorten_P   10
+#define Joint2_Shorten_P  10
 #define Joint3_Extend_P   4
-#define Joint3_Shorten_P   10
+#define Joint3_Shorten_P  10
 #endif
 
 

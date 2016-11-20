@@ -11,6 +11,8 @@ extern int16u_t Joint3_AD_Data;
 extern int16u_t Joint3_Object_Angle;
 extern int16u_t Joint2_Object_Angle;
 extern int16u_t Joint1_Object_Angle;
+extern int8u_t fdata[3];
+extern int16u_t pc104para;
 
 extern void Timer0Interrupt(void);
 extern void Timer1Interrupt(void);

@@ -19,6 +19,8 @@ void GPIO_Init(void)
 	{
 	GPIO_SetPinMod (PORT0,13,0);
         GPIO_SetPinDir (PORT0,13,1);
+        GPIO_SetPinMod (PORT0, 2, 0);       //选择P0.0为TXD0功能
+        GPIO_SetPinDir (PORT0, 2, 1);
 	}
 /*******************************************************************************
 * 函数名称：PWM_Init
@@ -37,6 +39,7 @@ void UART_Init(void)
 	{
         GPIO_SetPinMod (PORT0, 0, 1);       //选择P0.0为TXD0功能
         GPIO_SetPinMod (PORT0, 1, 1);       //选择P0.1为RXD0功能
+        GPIO_SetPinStat(PORT0, 2,0);
 	Data_Control(UART0,9600,8,0,1);   //UART0 9600波特率 8位数据位 无奇偶校验 1位停止位
 	}
 /*******************************************************************************
@@ -76,7 +79,8 @@ void CAN_Init()
   C2MOD |= 0x01;
 
   Open_CAN_Interrupt(CAN1,0,2);     //使能 CAN1接收中断 优先级为2
-  Open_CAN_Interrupt(CAN2,0,3);     //使能 CAN1接收中断 优先级为2
+  Open_CAN_Interrupt(CAN2,0,3);     //使能 CAN2接收中断 优先级为3
+  //为解决CAN2不进接收中断的问题，将CAN2 接收滤波器type 改为EW_CAN_STD.
   /**************关于CAN总线的设置*************************/
   //step1:滤波器
   // step2:分频系数，2是1M,4是500k,....,both of them have to same
@@ -86,8 +90,8 @@ void CAN_Init()
   C1GSR = 0;                        //清全局状态寄存器
   C2GSR = 0;
 
-  CAN_Clk(CAN1,4,1);               //CAN位时间为100usec
-  CAN_Clk(CAN2,4,1);
+  CAN_Clk(CAN1,2,1);               //CAN位时间为100usec
+  CAN_Clk(CAN2,2,1);
 
    SFF_sa     = 0;                //标准帧起始地址寄存器
    SFF_GRP_sa = 0;                //标准帧组起始地址寄存器
@@ -175,5 +179,6 @@ void System_Init(void)
       //PIT_Init();                     //定时器初始化
       AD_Init();
       SPI_Init();
+      UART_Init();
 
     }

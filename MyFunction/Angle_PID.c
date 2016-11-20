@@ -39,10 +39,10 @@ void Joint1_Angle_PID(int16u_t Object_Data,int16u_t AD_Data)
  {
  nP=Joint1_PID_DOWN_Limit;
  }
-
  /**************************以下通过DA输出控制伺服阀****************************/
+
  Joint1_PI_Out=(int16u_t)(nP+Joint1_Zero);   //从[-512,512]平移到[0,1024]
- Joint1_PI_Out=Joint1_PI_Out<<2;   //低两位，高四位 无效
+ Joint1_PI_Out=Joint1_PI_Out<<2;   //低两位，高四位 无效 ，接受16位，但只有10位有效
 
   GPIO_SetPinStat(PORT0,7,0);
   Joint1_Temp=Joint1_PI_Out>>8;      //取高八位数据
@@ -158,19 +158,10 @@ void DA_Control(int16s_t Manipulate_Data,int8u_t Joint){
 
  switch(Joint){
  case 1:
-      if(Manipulate_Data>Joint1_PID_UP_Limit)
- {
- Manipulate_Data=Joint1_PID_UP_Limit;
- }
-  if(Manipulate_Data<Joint1_PID_DOWN_Limit)
- {
- Manipulate_Data=Joint1_PID_DOWN_Limit;
- }
 
-  Manipulate_Data=Manipulate_Data+Joint1_Zero;
   Manipulate_Data=Manipulate_Data<<2;
 
-  GPIO_SetPinStat(PORT0,7,0);
+  GPIO_SetPinStat(PORT0,7,0);           //该位与从slaver de SEL connect，it  is like a enable
   Manipulate_Temp=Manipulate_Data>>8;      //取高八位数据
   SPI_Send_Data(SPI0,&Manipulate_Temp);
   Manipulate_Temp=Manipulate_Data&0xff;    //取低八位数据
@@ -179,18 +170,8 @@ void DA_Control(int16s_t Manipulate_Data,int8u_t Joint){
 
    break;
  case 2:
-      if(Manipulate_Data>Joint2_PID_UP_Limit)
- {
- Manipulate_Data=Joint2_PID_UP_Limit;
- }
-  if(Manipulate_Data<Joint2_PID_DOWN_Limit)
- {
- Manipulate_Data=Joint2_PID_DOWN_Limit;
- }
 
-  Manipulate_Data=Manipulate_Data+Joint2_Zero;
    Manipulate_Data=Manipulate_Data<<2;
-
 
      GPIO_SetPinStat(PORT0,10,0);
   Manipulate_Temp=Manipulate_Data>>8;      //取高八位数据
@@ -201,16 +182,7 @@ void DA_Control(int16s_t Manipulate_Data,int8u_t Joint){
 
    break;
  case 3:
-      if(Manipulate_Data>Joint3_PID_UP_Limit)
- {
- Manipulate_Data=Joint3_PID_UP_Limit;
- }
-  if(Manipulate_Data<Joint3_PID_DOWN_Limit)
- {
- Manipulate_Data=Joint3_PID_DOWN_Limit;
- }
 
-  Manipulate_Data=Manipulate_Data+Joint3_Zero;
    Manipulate_Data=Manipulate_Data<<2;
 
      GPIO_SetPinStat(PORT0,11,0);

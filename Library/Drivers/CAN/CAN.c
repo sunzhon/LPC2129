@@ -77,11 +77,11 @@ CAN_Filter CAN1Filter[] = {
 CAN_Filter CAN2Filter[] = {
 /* Filter         Controller, Disable,  ID,        ID       */
 /*  Type           1  2        1  2     1          2        */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x30,      0x31  },    /* Standard ID 0x10, 0x12 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x32,      0x33  },    /* Standard ID 0x23, 0x24 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x34,      0x35  },    /* Standard ID 0x26, 0x27 */
-{ EW_CAN_FULL,     1, 1,       0, 0,    0x36,      0x37  },    /* Standard ID 0x29, 0x2A */
-{ EW_CAN_STD,      1, 1,       0, 0,    0x150,     0x151 },    /* Standard ID 0x150, 0x151 */
+{ EW_CAN_STD,     1, 1,       0, 0,    0x30,      0x31  },    /* Standard ID 0x10, 0x12 */
+{ EW_CAN_STD,     1, 1,       0, 0,    0x32,      0x33  },    /* Standard ID 0x23, 0x24 */
+{ EW_CAN_STD,     1, 1,       0, 0,    0x34,      0x35  },    /* Standard ID 0x26, 0x27 */
+{ EW_CAN_STD,     1, 1,       0, 0,    0x50,      0x51  },    /* Standard ID 0x29, 0x2A */
+{ EW_CAN_STD,      1, 1,       0, 0,    0x52,     0x53 },    /* Standard ID 0x150, 0x151 */
 { EW_CAN_STD_GRP,  1, 1,       0, 0,    0x600,     0x620 },    /* Standard ID 0x600-0x620 */
 { EW_CAN_STD_GRP,  1, 1,       0, 0,    0x700,     0x780 },    /* Standard ID 0x700-0x780 */
 { EW_CAN_EXT,      1, 1,       0, 0,    0x334455,  0 },        /* Extended ID 0x334455 */
@@ -156,7 +156,7 @@ void Open_CAN_Interrupt(int8u_t channel,int16u_t number,int8u_t prio)
      int32u_t volatile *VIC_Cntl_address;
      int32u_t volatile *VIC_address;
      VIC_Cntl_address = &VICVectCntl0+ prio;     //中断优先级设置寄存器地址
-     VIC_address = &VICVectAddr0+prio;           //中断函数入口地址
+     VIC_address = &VICVectAddr0+prio;           //向量中断函数入口地址 ，该VICVectAddr0地址内已经写好了个向量服务函数的地址
      switch(channel)
      {
      case 1:
@@ -166,7 +166,7 @@ void Open_CAN_Interrupt(int8u_t channel,int16u_t number,int8u_t prio)
            {
              VICIntSelect &= ~VIC_CAN1RX_bit;              //选择对应中断为IRQ中断类型
              *VIC_Cntl_address = 0x20|VIC_CAN1RX;          //接收中断
-             *VIC_address = (int32u_t)&EW_IntHandler_RX_CAN1;
+             *VIC_address = (int32u_t)&EW_IntHandler_RX_CAN1;   //服务函数地址写到向量地址中
               VICIntEnable |= VIC_CAN1RX_bit;
            }
            else if(number==1|number==9|number==10)        //三个发送中断

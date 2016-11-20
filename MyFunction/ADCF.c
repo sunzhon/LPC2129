@@ -43,6 +43,24 @@ int16u_t AD_Data_Change_Temp;                   //用于数据交换临时变量
   return AD_Data;
 
     }
+int8u_t Force_Fliter(int8u_t PORT){
+
+  int8u_t fdata;
+  int8u_t temp;
+  int8u_t i;
+  int16u_t sum=0;
+
+  for(i=0;i<10;i++){
+
+     Getchar(PORT,&temp) ;
+     sum+=temp;
+
+  }
+   fdata=(int8u_t)((sum/10)&0x00FF);
+
+   return fdata;
+
+}
 
 
 /*=============================================================================
@@ -51,16 +69,32 @@ int16u_t AD_Data_Change_Temp;                   //用于数据交换临时变量
 备注  ：一帧数据中包含的是一条腿中三个关节的角度值，
 ===============================================================================*/
 void AD_Send(int16u_t Joint1_AD_Data,int16u_t Joint2_AD_Data,int16u_t Joint3_AD_Data,int8u_t Leg_Number){
- CAN_MSG TxMsg2;
+ CAN_MSG TxMsg_temp;
 
   int32u_t temp1,temp2,temp3;
-  TxMsg2.CTRL=Can1Test[0].CTRL;
-  TxMsg2.ID=Leg_Number;
+  TxMsg_temp.CTRL=Can1Test[0].CTRL;
+  TxMsg_temp.ID=Leg_Number;
   temp1=(int32u_t)Joint1_AD_Data;
   temp2=(int32u_t)Joint2_AD_Data;
   temp3=(int32u_t)Joint3_AD_Data;
   temp1=(temp1<<16)&0xFFFF0000;
-  TxMsg2.Data1=temp1+temp2;
-  TxMsg2.Data2=temp3;
-  EW_SendData_CAN(CAN1,&TxMsg2);
+  TxMsg_temp.Data1=temp1+temp2;
+  TxMsg_temp.Data2=temp3;
+  EW_SendData_CAN(CAN1,&TxMsg_temp);
+}
+void Force_Send(int16u_t Force_X,int16u_t Force_Y,int16u_t Force_Z,int8u_t Leg_Number){
+
+     CAN_MSG TxMsg_temp;
+
+  int32u_t temp1,temp2,temp3;
+  TxMsg_temp.CTRL=Can1Test[0].CTRL;
+  TxMsg_temp.ID=Leg_Number;
+  temp1=(int32u_t)Force_X;
+  temp2=(int32u_t)Force_Y;
+  temp3=(int32u_t)Force_Z;
+  temp1=(temp1<<16)&0xFFFF0000;
+  TxMsg_temp.Data1=temp1+temp2;
+  TxMsg_temp.Data2=temp3;
+  EW_SendData_CAN(CAN2,&TxMsg_temp);
+
 }
